@@ -1,0 +1,288 @@
+/* =========================================
+   THEME VARIABLES
+   ========================================= */
+
+/* Dark theme (default) */
+:root,
+[data-theme="dark"] {
+    color-scheme: dark;
+
+    /* Backgrounds */
+    --background: #0b1120;
+    --surface: #111a2e;
+    --surface-alt: #172238;
+    --surface-hover: #1d2a42;
+
+    /* Text */
+    --text: #e8edf7;
+    --secondary: #a1acc0;
+    --muted: #718096;
+
+    /* Accent colors */
+    --accent: #60a5fa;
+    --accent-hover: #93c5fd;
+    --accent-subtle: rgba(96, 165, 250, 0.12);
+
+    /* Borders and shadows */
+    --border: #26344d;
+    --border-hover: #3b82f6;
+    --shadow: rgba(0, 0, 0, 0.25);
+    --shadow-strong: rgba(0, 0, 0, 0.4);
+
+    /* Code editor */
+    --code-background: #080e1a;
+    --code-header: #111827;
+    --code-text: #cbd5e1;
+    --code-keyword: #c084fc;
+    --code-string: #86efac;
+    --code-function: #60a5fa;
+    --code-comment: #64748b;
+
+    /* Status and decoration */
+    --success: #4ade80;
+    --warning: #fbbf24;
+    --danger: #f87171;
+
+    /* Navigation */
+    --nav-background: rgba(11, 17, 32, 0.88);
+
+    /* Scrollbar */
+    --scrollbar-track: #111a2e;
+    --scrollbar-thumb: #334155;
+    --scrollbar-thumb-hover: #475569;
+
+    /* Shared effects */
+    --transition-theme: background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+/* =========================================
+   LIGHT THEME
+   ========================================= */
+
+[data-theme="light"] {
+    color-scheme: light;
+
+    /* Backgrounds */
+    --background: #f8fafc;
+    --surface: #ffffff;
+    --surface-alt: #f1f5f9;
+    --surface-hover: #e8eef6;
+
+    /* Text */
+    --text: #172033;
+    --secondary: #475569;
+    --muted: #64748b;
+
+    /* Accent colors */
+    --accent: #2563eb;
+    --accent-hover: #1d4ed8;
+    --accent-subtle: rgba(37, 99, 235, 0.09);
+
+    /* Borders and shadows */
+    --border: #e2e8f0;
+    --border-hover: #2563eb;
+    --shadow: rgba(15, 23, 42, 0.08);
+    --shadow-strong: rgba(15, 23, 42, 0.14);
+
+    /* Code editor */
+    --code-background: #172033;
+    --code-header: #0f172a;
+    --code-text: #e2e8f0;
+    --code-keyword: #c084fc;
+    --code-string: #86efac;
+    --code-function: #60a5fa;
+    --code-comment: #94a3b8;
+
+    /* Status and decoration */
+    --success: #16a34a;
+    --warning: #d97706;
+    --danger: #dc2626;
+
+    /* Navigation */
+    --nav-background: rgba(248, 250, 252, 0.88);
+
+    /* Scrollbar */
+    --scrollbar-track: #f1f5f9;
+    --scrollbar-thumb: #cbd5e1;
+    --scrollbar-thumb-hover: #94a3b8;
+}
+
+
+/* =========================================
+   SYSTEM PREFERENCE
+   ========================================= */
+
+/* Use the system preference when no theme
+   has been explicitly selected. */
+
+@media (prefers-color-scheme: light) {
+    :root:not([data-theme]) {
+        color-scheme: light;
+
+        --background: #f8fafc;
+        --surface: #ffffff;
+        --surface-alt: #f1f5f9;
+        --surface-hover: #e8eef6;
+
+        --text: #172033;
+        --secondary: #475569;
+        --muted: #64748b;
+
+        --accent: #2563eb;
+        --accent-hover: #1d4ed8;
+        --accent-subtle: rgba(37, 99, 235, 0.09);
+
+        --border: #e2e8f0;
+        --border-hover: #2563eb;
+        --shadow: rgba(15, 23, 42, 0.08);
+        --shadow-strong: rgba(15, 23, 42, 0.14);
+
+        --code-background: #172033;
+        --code-header: #0f172a;
+        --code-text: #e2e8f0;
+        --code-keyword: #c084fc;
+        --code-string: #86efac;
+        --code-function: #60a5fa;
+        --code-comment: #94a3b8;
+
+        --success: #16a34a;
+        --warning: #d97706;
+        --danger: #dc2626;
+
+        --nav-background: rgba(248, 250, 252, 0.88);
+
+        --scrollbar-track: #f1f5f9;
+        --scrollbar-thumb: #cbd5e1;
+        --scrollbar-thumb-hover: #94a3b8;
+    }
+}
+
+
+/* =========================================
+   THEME TRANSITIONS
+   ========================================= */
+
+html {
+    background-color: var(--background);
+    color: var(--text);
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+    transition: var(--transition-theme);
+}
+
+header,
+section,
+footer,
+.project-card,
+.skill-card,
+.highlight-card {
+    transition: var(--transition-theme);
+}
+
+
+/* =========================================
+   SCROLLBAR COLORS
+   ========================================= */
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+}
+
+*::-webkit-scrollbar {
+    width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+}
+
+*::-webkit-scrollbar-thumb {
+    background: var(--scrollbar-thumb);
+    border-radius: 10px;
+    border: 2px solid var(--scrollbar-track);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover);
+}
+
+
+/* =========================================
+   HERO CODE WINDOW - THEME SUPPORT
+   ========================================= */
+
+/* Dark theme */
+:root,
+html[data-theme="dark"] {
+    --editor-background: #080e1a;
+    --editor-header: #111827;
+    --editor-text: #cbd5e1;
+    --editor-border: #26344d;
+    --editor-purple: #c084fc;
+    --editor-green: #86efac;
+}
+
+/* Light theme */
+html[data-theme="light"] {
+    --editor-background: #ffffff;
+    --editor-header: #f1f5f9;
+    --editor-text: #334155;
+    --editor-border: #dbe3ee;
+    --editor-purple: #7c3aed;
+    --editor-green: #15803d;
+}
+
+/* Code editor container */
+.hero-visual .code-window {
+    background-color: var(--editor-background);
+    border: 1px solid var(--editor-border);
+    color: var(--editor-text);
+
+    transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease;
+}
+
+/* Code editor header */
+.hero-visual .code-window-header {
+    background-color: var(--editor-header);
+    border-bottom: 1px solid var(--editor-border);
+    color: var(--editor-text);
+}
+
+/* Code editor content */
+.hero-visual .code-content {
+    background-color: var(--editor-background);
+    color: var(--editor-text);
+}
+
+/* Code text */
+.hero-visual .code-content p {
+    color: var(--editor-text);
+}
+
+/* Syntax highlighting */
+.hero-visual .code-content .code-purple {
+    color: var(--editor-purple);
+}
+
+.hero-visual .code-content .code-green {
+    color: var(--editor-green);
+}
+
+/* Preserve indentation */
+.hero-visual .code-content .indent {
+    padding-left: 1.5rem;
+}
+
+.hero-visual .code-content .indent-2 {
+    padding-left: 3rem;
+}

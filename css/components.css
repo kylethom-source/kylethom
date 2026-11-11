@@ -1,0 +1,1042 @@
+/* =========================================
+   BUTTONS
+   ========================================= */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+    padding: 0.8rem 1.4rem;
+
+    border: 1px solid transparent;
+    border-radius: 8px;
+
+    font-family: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: #ffffff;
+    box-shadow: 0 4px 12px var(--shadow);
+}
+
+.btn-primary:hover {
+    background: var(--accent-hover);
+    box-shadow: 0 6px 18px var(--shadow-strong);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--text);
+    border-color: var(--border);
+}
+
+.btn-secondary:hover {
+    background: var(--surface-hover);
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.btn-text {
+    background: transparent;
+    color: var(--accent);
+    padding: 0.5rem 0;
+}
+
+.btn-text:hover {
+    color: var(--accent-hover);
+}
+
+
+/* =========================================
+   NAVIGATION LINKS
+   ========================================= */
+
+.nav-links a {
+    position: relative;
+
+    color: var(--secondary);
+    text-decoration: none;
+
+    font-size: 0.9rem;
+    font-weight: 500;
+
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--accent);
+}
+
+.nav-links a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--accent);
+    border-radius: 2px;
+
+    transition: width 0.2s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+
+/* =========================================
+   THEME TOGGLE
+   ========================================= */
+
+.theme-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    background: var(--surface);
+    color: var(--text);
+
+    border: 1px solid var(--border);
+    border-radius: 50%;
+
+    font-size: 1.15rem;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+    background: var(--surface-hover);
+    border-color: var(--accent);
+    transform: rotate(15deg);
+}
+
+
+/* =========================================
+   MOBILE MENU BUTTON
+   ========================================= */
+
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+
+    width: 42px;
+    height: 42px;
+
+    padding: 8px;
+
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+.mobile-menu-toggle span {
+    display: block;
+
+    width: 100%;
+    height: 2px;
+
+    background: var(--text);
+    border-radius: 2px;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease;
+}
+
+/* Active hamburger animation */
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+
+/* =========================================
+   CODE EDITOR WINDOW
+   ========================================= */
+
+.code-window {
+    overflow: hidden;
+
+    background: var(--code-background);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    box-shadow: 0 20px 50px var(--shadow-strong);
+}
+
+.code-window-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0.9rem 1rem;
+
+    background: var(--code-header);
+    border-bottom: 1px solid var(--border);
+}
+
+.window-dots {
+    display: flex;
+    gap: 6px;
+}
+
+.window-dots span {
+    width: 11px;
+    height: 11px;
+
+    border-radius: 50%;
+}
+
+.window-dots span:nth-child(1) {
+    background: #f87171;
+}
+
+.window-dots span:nth-child(2) {
+    background: #fbbf24;
+}
+
+.window-dots span:nth-child(3) {
+    background: #4ade80;
+}
+
+.code-window-title {
+    color: var(--code-comment);
+    font-family: monospace;
+    font-size: 0.8rem;
+}
+
+.code-window pre {
+    padding: 1.5rem;
+    overflow-x: auto;
+
+    color: var(--code-text);
+
+    font-family: "SFMono-Regular", Consolas, monospace;
+    font-size: 0.85rem;
+    line-height: 1.8;
+}
+
+.code-window code {
+    font-family: inherit;
+}
+
+.code-keyword {
+    color: var(--code-keyword);
+}
+
+.code-string {
+    color: var(--code-string);
+}
+
+.code-function {
+    color: var(--code-function);
+}
+
+.code-comment {
+    color: var(--code-comment);
+    font-style: italic;
+}
+
+
+/* =========================================
+   SOCIAL LINKS
+   ========================================= */
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+
+    color: var(--secondary);
+    text-decoration: none;
+
+    font-size: 0.9rem;
+    font-weight: 500;
+
+    transition: color 0.2s ease;
+}
+
+.social-links a:hover {
+    color: var(--accent);
+}
+
+
+/* =========================================
+   HIGHLIGHT CARDS
+   ========================================= */
+
+.highlight-card {
+    padding: 1.5rem;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    transition:
+        transform 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.highlight-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--border-hover);
+    box-shadow: 0 8px 24px var(--shadow);
+}
+
+.highlight-card h3 {
+    margin-bottom: 0.5rem;
+    color: var(--text);
+}
+
+.highlight-card p {
+    color: var(--secondary);
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+
+/* =========================================
+   SKILL TAGS
+   ========================================= */
+
+.skill-tag {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 0.4rem 0.75rem;
+
+    background: var(--accent-subtle);
+    color: var(--accent);
+
+    border: 1px solid transparent;
+    border-radius: 6px;
+
+    font-size: 0.8rem;
+    font-weight: 600;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.skill-tag:hover {
+    background: var(--surface-hover);
+    border-color: var(--accent);
+}
+
+
+/* =========================================
+   PROJECT CARDS
+   ========================================= */
+
+.project-card {
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--border-hover);
+    box-shadow: 0 12px 30px var(--shadow);
+}
+
+.project-card-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    padding: 1.5rem;
+}
+
+.project-card h3 {
+    margin-bottom: 0.75rem;
+    color: var(--text);
+    font-size: 1.2rem;
+}
+
+.project-card p {
+    color: var(--secondary);
+    font-size: 0.9rem;
+    line-height: 1.7;
+}
+
+.project-card .project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    margin-top: auto;
+    padding-top: 1.25rem;
+}
+
+.project-card .project-links a {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.project-card .project-links a:hover {
+    color: var(--accent-hover);
+}
+
+
+/* =========================================
+   PROJECT EXPANDER
+   ========================================= */
+
+.project-card details {
+    margin-top: 1rem;
+    border-top: 1px solid var(--border);
+}
+
+.project-card summary {
+    padding: 1rem 0;
+
+    color: var(--accent);
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    cursor: pointer;
+    list-style: none;
+}
+
+.project-card summary::-webkit-details-marker {
+    display: none;
+}
+
+.project-card summary::after {
+    content: "+";
+    float: right;
+
+    font-size: 1.2rem;
+    transition: transform 0.2s ease;
+}
+
+.project-card details[open] summary::after {
+    content: "−";
+}
+
+.project-card .project-details {
+    padding-bottom: 1rem;
+
+    color: var(--secondary);
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   EDUCATION TIMELINE
+   ========================================= */
+
+.timeline-item {
+    position: relative;
+    padding-left: 2rem;
+    padding-bottom: 2rem;
+
+    border-left: 2px solid var(--border);
+}
+
+.timeline-item::before {
+    content: "";
+
+    position: absolute;
+    left: -7px;
+    top: 4px;
+
+    width: 12px;
+    height: 12px;
+
+    background: var(--accent);
+    border: 3px solid var(--background);
+    border-radius: 50%;
+}
+
+.timeline-item:last-child {
+    border-left-color: transparent;
+}
+
+.timeline-item h3 {
+    color: var(--text);
+    margin-bottom: 0.4rem;
+}
+
+.timeline-item p {
+    color: var(--secondary);
+    line-height: 1.7;
+}
+
+.timeline-date {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+
+    color: var(--accent);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+
+/* =========================================
+   CONTACT LINKS
+   ========================================= */
+
+.contact-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+
+    transition: color 0.2s ease;
+}
+
+.contact-link:hover {
+    color: var(--accent-hover);
+}
+
+
+/* =========================================
+   SCROLL PROGRESS BAR
+   ========================================= */
+
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1001;
+
+    width: 0%;
+    height: 3px;
+
+    background: var(--accent);
+
+    transition: width 0.1s linear;
+}
+
+
+/* =========================================
+   FOCUS AND ACCESSIBILITY
+   ========================================= */
+
+button:focus-visible,
+a:focus-visible,
+summary:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 4px;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+
+/* =========================================
+   REDUCED MOTION
+   ========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .btn,
+    .project-card,
+    .highlight-card,
+    .theme-toggle,
+    .nav-links a,
+    .mobile-menu-toggle span {
+        transition: none;
+    }
+
+    .btn:hover,
+    .project-card:hover,
+    .highlight-card:hover {
+        transform: none;
+    }
+}
+
+/* =========================================
+   PROJECT FILTERS
+   ========================================= */
+
+.project-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.project-filter {
+    padding: 0.65rem 1rem;
+
+    background: var(--surface);
+    color: var(--secondary);
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    font: inherit;
+    font-size: 0.85rem;
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.project-filter:hover,
+.project-filter.active {
+    background: var(--accent-subtle);
+    color: var(--accent);
+    border-color: var(--accent);
+}
+
+/* =========================================
+   PROJECT SEARCH
+   ========================================= */
+
+.project-search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.project-search input {
+    flex: 1;
+    min-width: 0;
+    padding: 0.8rem 1rem;
+
+    background: var(--surface);
+    color: var(--text);
+
+    border: 1px solid var(--border);
+    border-radius: 8px;
+
+    font: inherit;
+}
+
+.project-search input:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+#project-count {
+    color: var(--secondary);
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+#no-projects {
+    color: var(--secondary);
+    text-align: center;
+    padding: 2rem;
+}
+
+/* Hide filtered projects */
+.project-card[hidden] {
+    display: none;
+}
+
+@media (max-width: 576px) {
+    .project-filters {
+        justify-content: flex-start;
+    }
+
+    .project-search {
+        align-items: stretch;
+        flex-direction: column;
+    }
+}
+
+/* =========================================
+   SCROLL REVEAL ANIMATIONS
+   ========================================= */
+
+.reveal {
+    opacity: 1;
+    transform: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .js-enabled .reveal {
+        opacity: 0;
+        transform: translateY(24px);
+
+        transition:
+            opacity 0.6s ease,
+            transform 0.6s ease;
+    }
+
+    .js-enabled .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Keyboard focus styling for project cards */
+
+.project-card.focused {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px var(--accent-subtle);
+}
+
+/* =========================================
+   BACK TO TOP BUTTON
+   ========================================= */
+
+.back-to-top {
+    position: fixed;
+    right: 1.5rem;
+    bottom: 1.5rem;
+    z-index: 900;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 46px;
+    height: 46px;
+
+    background: var(--accent);
+    color: #ffffff;
+
+    border: none;
+    border-radius: 50%;
+
+    font-size: 1.4rem;
+    font-weight: 600;
+
+    box-shadow: 0 6px 20px var(--shadow);
+
+    cursor: pointer;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(12px);
+
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease,
+        transform 0.25s ease,
+        background-color 0.25s ease;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background: var(--accent-hover);
+    transform: translateY(-3px);
+}
+
+@media (max-width: 576px) {
+    .back-to-top {
+        right: 1rem;
+        bottom: 1rem;
+
+        width: 42px;
+        height: 42px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .back-to-top {
+        transition: none;
+    }
+}
+
+/* =========================================
+   HERO PROFILE PHOTO
+   ========================================= */
+
+.profile-photo {
+    width: 112px;
+    height: 112px;
+    flex-shrink: 0;
+
+    border-radius: 50%;
+    overflow: hidden;
+
+    border: 3px solid var(--accent);
+    box-shadow: 0 6px 20px var(--shadow);
+
+    margin-bottom: 1.5rem;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        transform 0.25s ease;
+}
+
+.profile-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+.profile-photo:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px var(--shadow-strong);
+}
+
+/* Tablet and mobile adjustments */
+
+@media (max-width: 768px) {
+    .profile-photo {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 576px) {
+    .profile-photo {
+        width: 96px;
+        height: 96px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .profile-photo {
+        transition: none;
+    }
+
+    .profile-photo:hover {
+        transform: none;
+    }
+}
+
+
+/* =========================================
+   PROJECT CARD - PHOTO LAYOUT
+   ========================================= */
+
+/* Main image container */
+.project-card .project-image {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    padding: 0;
+    overflow: hidden;
+    background: var(--surface);
+}
+
+/* Top project number label */
+.project-card .project-image-label {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    min-height: 55px;
+    padding: 0 1.5rem;
+
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+}
+
+/* Project label text */
+.project-card .project-image-label span {
+    color: var(--accent);
+    font-family: "SFMono-Regular", Consolas, monospace;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+}
+
+
+/* =========================================
+   SHARED PROJECT IMAGE STYLING
+   ========================================= */
+
+.project-card .printer-background,
+.project-card .opengl-background,
+.project-card .tulips-background {
+    width: 100%;
+    height: 230px;
+    flex-shrink: 0;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    transition: filter 0.3s ease;
+}
+
+/* Project 1 - 3D Printer */
+.project-card .printer-background {
+    background-image: url("../assets/images/images/3D%20Printer.jpg");
+}
+
+/* Project 2 - OpenGL */
+.project-card .opengl-background {
+    background-image: url("../assets/images/images/OpenGLdino.jpg");
+}
+
+/* Project 3 - Tulips */
+.project-card .tulips-background {
+    background-image: url("../assets/images/images/tulips.jpg");
+}
+
+/* Hover effect */
+.project-card:hover .printer-background,
+.project-card:hover .opengl-background,
+.project-card:hover .tulips-background {
+    filter: brightness(1.05);
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+
+    .project-card .printer-background,
+    .project-card .opengl-background,
+    .project-card .tulips-background {
+        height: 190px;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+
+    .project-card .printer-background,
+    .project-card .opengl-background,
+    .project-card .tulips-background {
+        transition: none;
+    }
+}
+
+/* Project resource links */
+.project-resource-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.project-resource-links a {
+    color: var(--accent);
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.project-resource-links a:hover {
+    color: var(--accent-hover);
+    text-decoration: underline;
+}
+
+/* =========================================
+   ROTATING CONTACT HEADING
+   ========================================= */
+
+.contact-heading {
+    text-align: center;
+    line-height: 1.4;
+}
+
+.rotating-word {
+    display: inline-block;
+    color: var(--accent);
+    white-space: nowrap;
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+/* Word disappearing */
+.rotating-word.fade-out {
+    opacity: 0;
+    transform: translateY(-12px);
+}
+
+/* Word appearing */
+.rotating-word.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .rotating-word {
+        transition: none;
+    }
+}
